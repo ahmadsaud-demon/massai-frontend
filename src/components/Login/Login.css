@@ -1,0 +1,62 @@
+/* Login.css */
+
+/* Styling for the login container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  /* Styling for the Paper component */
+  .login-paper {
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Typography for the login title */
+  .login-title {
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333333;
+  }
+  
+  /* Error message styling */
+  .login-error {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #d32f2f;
+  }
+  
+  /* Styling for the TextField input fields */
+  .login-input {
+    margin-bottom: 16px;
+  }
+  
+  /* Button styling */
+  .login-button {
+    background-color: #1976d2;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    margin-top: 16px;
+  }
+  
+  .login-button:hover {
+    background-color: #1565c0;
+  }
+  
+  /* Media query for responsiveness */
+  @media only screen and (max-width: 600px) {
+    .login-paper {
+      padding: 20px;
+    }
+  }
+  
