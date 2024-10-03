@@ -9,18 +9,6 @@ import CryptoJS from 'crypto-js';
 // Configure Amplify
 Amplify.configure(awsConfig);
 
-
-
-function calculateSecretHash(username) {
-  const clientId = '23o9a1596acr5ohr92p8fnhlu8'; // Your app client ID
-  const clientSecret = '167sugnk8j2bktishom8qad6pat5tu4e8kj4d60l6o5neq0vce87'; // Use your client secret securely
-  const userPoolId = 'ap-south-1_6otCpX4GV'; // Your User Pool ID
-
-  const message = userPoolId + username;
-  const hash = CryptoJS.HmacSHA256(message, clientSecret);
-  return CryptoJS.enc.Base64.stringify(hash);
-}
-
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -34,7 +22,6 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const secretHash = calculateSecretHash(username);
       const user = await signIn({username, password});
       // Check if the user needs to set a new password
       if (user.isSignedIn == false && user.nextStep.signInStep === 'CONFIRM_SIGN_IN_WITH_NEW_PASSWORD_REQUIRED') {
